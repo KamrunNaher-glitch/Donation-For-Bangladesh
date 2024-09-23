@@ -13,21 +13,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Tailwind Configuration  -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#B4F461',
-                    },
-                    fontFamily: {
-                        font:"Lexend"
-                    }
-                }
-            }
-        }
-    </script>
-
-
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      primary: '#B4F461',
+                  },
+                  fontFamily: {
+                      font:"Lexend"
+                  }
+              }
+          }
+      }
+  </script>
 </head>
 <body class="font">
     <!-- NavBer Section Starts  -->
@@ -35,7 +33,7 @@
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <!-- Blog Button  -->
         <div class="flex">
-          <button class="btn bg-[#B4F461] text-2xl text-black border-none font-bold">
+          <button id="blog-button" class="btn bg-[#B4F461] text-2xl text-black border-none font-bold">
             Blog
           </button>
         </div>
@@ -127,7 +125,7 @@
                     <div class="w-full lg:w-1/2">
                         <img
                           src="./assets/feni.png"
-                          alt="Flood Image"
+                          alt=""
                           class="w-full h-full object-cover rounded-md"
                         />
                     </div>
@@ -163,7 +161,6 @@
                           placeholder="Write Donation Amount"
                           class="input input-bordered w-full bg-white"
                         />
-      
                         <button
                           id="card2-donate-btn"
                           class="btn bg-[#B4F461] hover:bg-[#A3E250] text-black text-2xl font-semibold border-none w-full mt-4">
@@ -222,13 +219,26 @@
                 </div>
               </div>
                <!-- Card Three (Quota )Ends   -->
-
           </section>
-
-           
-          
-
+          <!-- Transaction History -->
+          <div id="history-section" class="hidden bg-gray-100 p-5 w-4/5 mx-auto">
+            <div class="container mx-auto">
+              <div class="card shadow-xl mb-4">
+                <div class="card-body">
+                  <ul id="history-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
      </main>
+     <script src="Js/donation.js"></script>
+     <script src="Js/features.js"></script>
+     <script>
+      // Handle Blog button click to navigate to Blog page
+      document.getElementById('blog-button').addEventListener('click', function() {
+          window.location.href = 'blog.html'; // Redirect to blog page
+      });
+  </script>
     
 </body>
 </html>

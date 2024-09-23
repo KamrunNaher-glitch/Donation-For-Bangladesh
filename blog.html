@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Donation For Bangladesh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      primary: '#B4F461',
+                  },
+                  fontFamily: {
+                      font:"Lexend"
+                  }
+              }
+          }
+      }
+    </script>
+</head>
+<body class="font">
+
+    <!-- Navigation to Home -->
+    <header class=" bg-[#f9f7f3] shadow-md sticky top-0 z-50 "></header>
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Blog Button  -->
+        <div class="flex">
+          <button id="home-button"   class="btn bg-[#B4F461] text-2xl text-black border-none font-bold">
+            Home
+          </button>
+        </div>
+        <!-- Logo -->
+        <div class="flex justify-center">
+          <img src="./assets/logo.png" alt="Logo" class="w-12 h-12" />
+          <h1 class="text-2xl font-semibold ml-4 mt-4 items-center">Donate Bangladesh</h1>
+        </div>
+        <!-- Donation Amount  -->
+        <div class="flex items-center space-x-2">
+          <img src="./assets/coin.png" alt="Coin Icon" class="w-6 h-6" />
+          <span class="text-black-500 text-lg font-bold">
+            <span id="total-target">5500</span>BDT</span >
+        </div>
+      </div> 
+    </header>
+    <main class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold mb-4">Important FAQ ??</h2>
+        <div class="space-y-4">
+            <!-- Blog Post Example -->
+            <article class="bg-white p-6 rounded-lg shadow-md">
+                <!-- FAQ Section Starts  -->
+                <div class="collapse collapse-arrow bg-base-200 mt-10 ">
+                    <input type="radio" name="my-accordion-2" checked="checked" />
+                    <div class="collapse-title text-xl font-medium">What is the Document Object Model (DOM)?</div>
+                    <div class="collapse-content">
+                      <p>The Document Object Model (DOM) is a programming interface for web documents.</p>
+                    </div>
+                  </div>
+                  <div class="collapse collapse-arrow bg-base-200">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title text-xl font-medium">How do you select an element from DOM ?</div>
+                    <div class="collapse-content">
+                      <p>Document.getElementById</p>
+                    </div>
+                  </div>
+                  <div class="collapse collapse-arrow bg-base-200">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM,and why it is useful?</div>
+                    <div class="collapse-content">
+                      <p>the process of using event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated</p>
+                    </div>
+                  </div>
+                  <div class="collapse collapse-arrow bg-base-200">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title text-xl font-medium">How do you manipulate an elements attributes and styles using the DOM?</div>
+                    <div class="collapse-content">
+                      <p>If you want to change other attributes like id , href , or src , you can use the setAttribute() method. </p>
+                    </div>
+                  </div>
+                <!-- FAQ Section Ends -->
+                </article>
+        </div>
+    </main>
+    <script>
+        // Handle Home button click to navigate to Home page
+        document.getElementById('home-button').addEventListener('click', function() {
+            window.location.href = 'index.html'; // Redirect to home page
+        });
+    </script>
+</body>
+</html>
