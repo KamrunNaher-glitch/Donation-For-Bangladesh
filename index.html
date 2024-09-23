@@ -4,8 +4,231 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donation For Bangladesh</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Daisy UI  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Configuration  -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#B4F461',
+                    },
+                    fontFamily: {
+                        font:"Lexend"
+                    }
+                }
+            }
+        }
+    </script>
+
+
 </head>
-<body>
+<body class="font">
+    <!-- NavBer Section Starts  -->
+    <header class=" bg-[#f9f7f3] shadow-md sticky top-0 z-50 ">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Blog Button  -->
+        <div class="flex">
+          <button class="btn bg-[#B4F461] text-2xl text-black border-none font-bold">
+            Blog
+          </button>
+        </div>
+        <!-- Logo -->
+        <div class="flex justify-center">
+          <img src="./assets/logo.png" alt="Logo" class="w-12 h-12" />
+          <h1 class="text-2xl font-semibold ml-4 mt-4 items-center">Donate Bangladesh</h1>
+        </div>
+        <!-- Donation Amount  -->
+        <div class="flex items-center space-x-2">
+          <img src="./assets/coin.png" alt="Coin Icon" class="w-6 h-6" />
+          <span class="text-black-500 text-lg font-bold">
+            <span id="total-target">5500</span>BDT</span >
+        </div>
+      </div> 
+    </header>
+    <!-- Navber Section Ends  -->
+     <main class="container mx-auto px-4 py-8">
+        <!-- Donation And History Button starts -->
+        <div class="flex justify-center space-x-4 mb-8">
+            <button
+              id="donation-btn"
+              class="btn bg-[#B4F461] border-none font-bold text-black " >Donation</button>
+            <button id="history-btn" class="btn btn-outline ">History</button>
+          </div>
+          <!-- Donation And History Button Ends -->
+          
+          <section id="cards-section">
+             <!-- Card One (Noakhali) Starts  -->
+            <div class="w-4/5 mx-auto">
+                <div class="card bg-white shadow-lg border rounded-lg p-4 mb-8 ">
+                  <div class="flex flex-col lg:flex-row">
+                    <!-- Image  -->
+                    <div class="w-full lg:w-1/2">
+                        <img
+                          src="./assets/noakhali.png" alt="" class="w-full h-full object-cover rounded-md"/>
+                    </div>
+                    <!-- Description and Donation Part -->
+                    <div class="w-full lg:w-1/2 p-4">
+                      <!-- <div class="flex justify-between items-center">
+                      <span class="text-black-500 text-lg font-bold">0 BDT</span>
+                    </div> -->
+                      <div
+                        class="flex justify-between items-center p-2 rounded-lg"
+                        style="background: rgba(17, 17, 17, 0.05); max-width: 110px"
+                      >
+                        <img src="./assets/coin.png" alt="" class="w-6 h-6"/>
+                        <span class="text-black-500 text-lg font-bold">
+                          <span id="card1-amount">0</span>BDT</span >
+                      </div>
+                      <h2 class="text-xl mt-2 text-black font-bold">
+                        Donate for Flood at Noakhali, Bangladesh
+                      </h2>
+                      <p class="text-gray-600 mt-2">
+                        The recent floods in Noakhali have caused significant damage
+                        to homes and infrastructure, leaving many families displaced
+                        and without basic necessities. Your donation will help provide
+                        essential supplies such as food, clean water, medical aid, and
+                        shelter to those affected by this devastating disaster. Every
+                        contribution, big or small, makes a tremendous difference and
+                        goes directly towards relief efforts.Please join us in
+                        supporting the people of Noakhali during this critical time,
+                        helping them rebuild their lives and restore hope.
+                      </p>
+                      <div class="mt-4">
+                        <input
+                          id="card1-input"
+                          type="text"
+                          placeholder="Write Donation Amount"
+                          class="input input-bordered w-full bg-white"/>
+      
+                        <button
+                          id="card1-donate-btn"
+                          class="btn bg-[#B4F461] text-2xl text-black font-semibold border-none w-full mt-4"
+                        >
+                          Donate Now
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card One Ends  -->
+              <!-- Card Two (Feni)Starts -->
+              <div class="w-4/5 mx-auto">
+                <div class="card bg-white shadow-lg border rounded-lg p-4 mb-8">
+                  <div class="flex flex-col lg:flex-row">
+                    <!-- Image  -->
+                    <div class="w-full lg:w-1/2">
+                        <img
+                          src="./assets/feni.png"
+                          alt="Flood Image"
+                          class="w-full h-full object-cover rounded-md"
+                        />
+                    </div>
+                    <!-- Description and Donation Part -->
+                    <div class="w-full lg:w-1/2 p-4">
+                      <!-- <div class="flex justify-between items-center">
+                      <span class="text-black-500 text-lg font-bold">0 BDT</span>
+                    </div> -->
+                      <div
+                        class="flex justify-between items-center p-2 rounded-lg"
+                        style="background: rgba(17, 17, 17, 0.05); max-width: 110px"
+                      >
+                        <img
+                          src="./assets/coin.png"
+                          alt="Currency Icon"
+                          class="w-6 h-6"
+                        />
+                        <span class="text-black-500 text-lg font-bold">
+                          <span id="card2-amount">0</span> BDT</span
+                        >
+                      </div>
+      
+                      <h2 class="text-xl mt-2 text-black font-bold">
+                        Donate for Flood Relief in Feni,Bangladesh
+                      </h2>
+                      <p class="text-gray-600 mt-2">
+                        To donate for flood relief in Feni, Bangladesh, you can consider several options. National charities and NGOs such as BRAC, the Bangladesh Red Crescent Society, and Bidyanondo Foundation often lead effective relief efforts by providing essential supplies like food, water, and shelter. International organizations, including UNICEF, Save the Children, and Islamic Relief, also support flood-affected areas in Bangladesh through emergency relief and long-term assistance. Additionally, local relief efforts may be organized by grassroots groups and community leaders in Feni. 
+                      </p>
+                      <div class="mt-4">
+                        <input
+                          id="card2-input"
+                          type="text"
+                          placeholder="Write Donation Amount"
+                          class="input input-bordered w-full bg-white"
+                        />
+      
+                        <button
+                          id="card2-donate-btn"
+                          class="btn bg-[#B4F461] hover:bg-[#A3E250] text-black text-2xl font-semibold border-none w-full mt-4">
+                          Donate Now
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card Two (Feni)Ends -->
+               <!-- Card Three (Quota )Starts  -->
+               <div class="w-4/5 mx-auto">
+                <div class="card bg-white shadow-lg border rounded-lg p-4 mb-8 ">
+                  <div class="flex flex-col lg:flex-row">
+                    <!-- Image  -->
+                    <div class="w-full lg:w-1/2">
+                        <img
+                          src="./assets/quota-protest.png" alt="" class="w-full h-full object-cover rounded-md"/>
+                    </div>
+                    <!-- Description and Donation Part -->
+                    <div class="w-full lg:w-1/2 p-4">
+                      <!-- <div class="flex justify-between items-center">
+                      <span class="text-black-500 text-lg font-bold">0 BDT</span>
+                    </div> -->
+                      <div
+                        class="flex justify-between items-center p-2 rounded-lg"
+                        style="background: rgba(17, 17, 17, 0.05); max-width: 110px"
+                      >
+                        <img src="./assets/coin.png" alt="" class="w-6 h-6"/>
+                        <span class="text-black-500 text-lg font-bold">
+                          <span id="card1-amount">0</span>BDT</span >
+                      </div>
+                      <h2 class="text-xl mt-2 text-black font-bold">
+                        Aid for Injured in the Quota Movement
+                      </h2>
+                      <p class="text-gray-600 mt-2">
+                        To support those injured during the Quota Movement in Bangladesh, it's important to understand the context of the protests. The Quota Reform Movement, which began in 2013 and gained momentum in 2018, called for reforms to the government job quota system, which allocated a significant percentage of jobs to certain groups. Many students and young professionals participated in these demonstrations, which were met with clashes and violence, leading to numerous injuries.Providing aid to those injured during the movement can be done through several channels. Many local organizations, student groups, and human rights activists have mobilized to help cover medical expenses and rehabilitation for the injured.
+                      </p>
+                      <div class="mt-4">
+                        <input
+                          id="card1-input"
+                          type="text"
+                          placeholder="Write Donation Amount"
+                          class="input input-bordered w-full bg-white"/>
+      
+                        <button
+                          id="card1-donate-btn"
+                          class="btn bg-[#B4F461] text-2xl text-black font-semibold border-none w-full mt-4"
+                        >
+                          Donate Now
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- Card Three (Quota )Ends   -->
+
+          </section>
+
+           
+          
+
+     </main>
     
 </body>
 </html>
