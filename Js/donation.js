@@ -1,58 +1,55 @@
-const donationButton = document.getElementById("donation-btn"); // Donation button
-const historyButton = document.getElementById("history-btn"); // History button
-const cardsSection = document.getElementById("cards-section"); // Cards section
-const historySection = document.getElementById("history-section"); // History section
+const donationButton = document.getElementById("donation-btn"); 
+const historyButton = document.getElementById("history-btn"); 
+const cardsSection = document.getElementById("cards-section"); 
+const historySection = document.getElementById("history-section"); 
 
 donationButton.addEventListener("click", function () {
-  cardsSection.style.display = "block"; // Show the cards section
-  historySection.style.display = "none"; // Hide the history section
+  cardsSection.style.display = "block"; 
+  historySection.style.display = "none"; 
 });
 
 historyButton.addEventListener("click", function () {
-  cardsSection.style.display = "none"; // Hide the cards section
-  historySection.style.display = "block"; // Show the history section
+  cardsSection.style.display = "none"; 
+  historySection.style.display = "block"; 
 });
 
-// --- Step 2: Handle donation amounts ---
+//   donation amounts ---
 let totalTargetAmount = document.getElementById("total-target").innerText;
-totalTargetAmount = parseInt(totalTargetAmount); // Convert the text to an integer
+totalTargetAmount = parseInt(totalTargetAmount); 
 
-// Card 1: Education Fund
+// Card 1: Noakhali Fund
 const card1DonateButton = document.getElementById("card1-donate-btn");
 const card1Amount = document.getElementById("card1-amount"); // The amount displayed in the card
 const card1Input = document.getElementById("card1-input"); // The input field for donation
 
-// Card 2: Healthcare Fund
+// Card 2: Feni Fund
 const card2DonateButton = document.getElementById("card2-donate-btn");
 const card2Amount = document.getElementById("card2-amount");
 const card2Input = document.getElementById("card2-input");
 
-// Card 3: Environmental Fund
+// Card 3: Quota Fund
 const card3DonateButton = document.getElementById("card3-donate-btn");
 const card3Amount = document.getElementById("card3-amount");
 const card3Input = document.getElementById("card3-input");
 
-// Function to handle the donation process for each card
+//  donation process 
 function handleDonation(cardInput, cardAmount) {
-  const donationValue = parseInt(cardInput.value); // Get the donation amount from input
+  const donationValue = parseInt(cardInput.value); 
 
   if (!isNaN(donationValue) && donationValue > 0) {
-    // Update the card's donation amount
     const currentCardAmount = parseInt(cardAmount.innerText);
     cardAmount.innerText = currentCardAmount + donationValue;
 
-    // Subtract from the total target amount
     totalTargetAmount -= donationValue;
     document.getElementById("total-target").innerText = totalTargetAmount;
 
-    // Clear the input field after donation
     cardInput.value = "";
   } else {
     alert("Please enter a valid donation amount.");
   }
 }
 
-// Event listeners for the "Donate" buttons
+// Add Event Handeler 
 card1DonateButton.addEventListener("click", function () {
   handleDonation(card1Input, card1Amount);
 });
@@ -65,23 +62,22 @@ card3DonateButton.addEventListener("click", function () {
   handleDonation(card3Input, card3Amount);
 });
 
-// --- Step 3: Add donation transactions to history (NEW CODE HERE) ---
+
 function handleDonation(cardInput, cardAmount, cardTitle) {
-  const donationValue = parseInt(cardInput.value); // Get the donation amount from input
+  const donationValue = parseInt(cardInput.value); 
+  // Condition 
 
   if (!isNaN(donationValue) && donationValue > 0) {
-    // Update the card's donation amount
+    
     const currentCardAmount = parseInt(cardAmount.innerText);
     cardAmount.innerText = currentCardAmount + donationValue;
 
-    // Subtract from the total target amount
+    // Subtract 
     totalTargetAmount -= donationValue;
     document.getElementById("total-target").innerText = totalTargetAmount;
 
-    // Add donation to the history section
     addToHistory(cardTitle, donationValue);
-
-    // Clear the input field after donation
+    
     cardInput.value = "";
   } else {
     alert("Please enter a valid donation amount.");
