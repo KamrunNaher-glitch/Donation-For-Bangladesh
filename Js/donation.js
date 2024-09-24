@@ -19,8 +19,8 @@ totalTargetAmount = parseInt(totalTargetAmount);
 
 // Card 1: Noakhali Fund
 const card1DonateButton = document.getElementById("card1-donate-btn");
-const card1Amount = document.getElementById("card1-amount"); // The amount displayed in the card
-const card1Input = document.getElementById("card1-input"); // The input field for donation
+const card1Amount = document.getElementById("card1-amount"); 
+const card1Input = document.getElementById("card1-input"); 
 
 // Card 2: Feni Fund
 const card2DonateButton = document.getElementById("card2-donate-btn");
@@ -77,22 +77,22 @@ function handleDonation(cardInput, cardAmount, cardTitle) {
     document.getElementById("total-target").innerText = totalTargetAmount;
 
     addToHistory(cardTitle, donationValue);
-    
+
     cardInput.value = "";
   } else {
     alert("Please enter a valid donation amount.");
   }
 }
 
-// Function to add donation record to the history section
+    // Function 
 function addToHistory(cardTitle, donationAmount) {
   const historySection = document.getElementById("history-section");
 
-  // Create a new history item (div)
+  //  (div)
   const historyCard = document.createElement("div");
   historyCard.className = "card shadow-xl mb-4";
 
-  // Add card content (title, amount, and time of donation)
+  //  card content 
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";
   const historyTitle = document.createElement("h2");
@@ -101,21 +101,19 @@ function addToHistory(cardTitle, donationAmount) {
 
   const donationTime = document.createElement("p");
   donationTime.className = "text-[#111111B3]";
-  const currentTime = new Date().toLocaleString(); // Get the current date and time
+  const currentTime = new Date().toLocaleString(); 
   donationTime.innerText = `Date: ${currentTime}`;
 
-  // Append title and time to card body
+  
   cardBody.appendChild(historyTitle);
   cardBody.appendChild(donationTime);
 
-  // Append card body to the history card
+  
   historyCard.appendChild(cardBody);
 
-  // Append the new history card to the history section
+
   historySection.appendChild(historyCard);
 }
-
-// Event listeners for the "Donate" buttons with card titles
 card1DonateButton.addEventListener("click", function () {
   handleDonation(card1Input, card1Amount, "Education Fund");
 });
